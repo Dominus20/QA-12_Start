@@ -75,6 +75,7 @@ public class Registration {
                 inputPassword.sendKeys("Nnoas12345$");
 
                 WebElement buttonRegistration = wd.findElement(By.cssSelector("div[class] button:last-child"));
+              //OR  //WebElement buttonRegistration = wd.findElement(By.cssSelector(".login_login__3EHKB button:last-child"));
                 buttonRegistration.click();
 
                 //url
