@@ -68,15 +68,18 @@ public class Registration {
 
                 inputEmail.click();// click "LOGIN" button
                 inputEmail.clear();
-                inputEmail.sendKeys("noas@gmail.com");
+                inputEmail.sendKeys("noaw@gmail.com");
 
                 inputPassword.click();
                 inputPassword.clear();
-                inputPassword.sendKeys("Nnoas12345$");
+                inputPassword.sendKeys("Nnoaw12345$");
 
-                WebElement buttonRegistration = wd.findElement(By.cssSelector("div[class] button:last-child"));
+               // WebElement buttonRegistration = wd.findElement(By.cssSelector("div[class] button:last-child"));
               //OR  //WebElement buttonRegistration = wd.findElement(By.cssSelector(".login_login__3EHKB button:last-child"));
-                buttonRegistration.click();
+                //buttonRegistration.click();
+                WebElement buttonRegistration1 = wd.findElement(By.xpath("//*[text()=' Registration']"));
+                //OR  //WebElement buttonRegistration = wd.findElement(By.cssSelector(".login_login__3EHKB button:last-child"));
+                buttonRegistration1.click();
 
                 //url
             // click "LOGIN" button

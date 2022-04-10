@@ -20,7 +20,7 @@ public class LoginTest {
         wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
- /*   @Test
+  @Test
 
     public void successLoginTest(){
       //  WebElement element = wd.findElement(By.tagName("a"));
@@ -32,6 +32,7 @@ public class LoginTest {
        // WebElement element4 = wd.findElement(By.cssSelector("#root"));
 
 
+
         List<WebElement> list = wd.findElements(By.tagName("a"));
         WebElement element = list.get(2);
 
@@ -41,16 +42,19 @@ public class LoginTest {
 
         // submit
 
-    }*/
+    }
     @Test
     public void fillLoginFormTest(){
-        WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
+        WebElement element = wd.findElement(By.cssSelector("//*[text()='LOGIN']"));
         element.click();
+
+
 
         List<WebElement> list = wd.findElements(By.tagName("input"));
 
         WebElement inputEmail = list.get(0);
         WebElement inputPassword = list.get(1);
+
 
 
         inputEmail.click();// click "LOGIN" button
