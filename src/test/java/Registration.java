@@ -33,6 +33,7 @@ public class Registration {
             // fill LoginRegistration form
             // submit
             //Logout
+                int i =  (int) (System.currentTimeMillis()/1000)%3600;
                 WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
                 element.click();
 
@@ -44,11 +45,11 @@ public class Registration {
 
                 inputEmail.click();// click "LOGIN" button
                 inputEmail.clear();
-                inputEmail.sendKeys("noar@gmail.com");
+                inputEmail.sendKeys("noa"+i+"@gmail.com");
 
                 inputPassword.click();
                 inputPassword.clear();
-                inputPassword.sendKeys("Nnoar12345$");
+                inputPassword.sendKeys("Nnoa12345$");
 
                 //WebElement buttonRegistration = wd.findElement(By.name("Registration"));
                 //buttonRegistration.click();
@@ -57,6 +58,7 @@ public class Registration {
         @Test
 
         public void negativeRegistrationTest(){
+                int i =  (int) (System.currentTimeMillis()/1000)%3600;
                 WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
                 element.click();
 
@@ -68,11 +70,11 @@ public class Registration {
 
                 inputEmail.click();// click "LOGIN" button
                 inputEmail.clear();
-                inputEmail.sendKeys("noaw@gmail.com");
+                inputEmail.sendKeys("noa"+i+"gmail.com");
 
                 inputPassword.click();
                 inputPassword.clear();
-                inputPassword.sendKeys("Nnoaw12345$");
+                inputPassword.sendKeys("Nnoa12345$");
 
                // WebElement buttonRegistration = wd.findElement(By.cssSelector("div[class] button:last-child"));
               //OR  //WebElement buttonRegistration = wd.findElement(By.cssSelector(".login_login__3EHKB button:last-child"));
