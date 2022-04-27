@@ -12,7 +12,7 @@ public class TestBase {
     protected static ApplicationManager app = new ApplicationManager();
 
 
-  // WebDriver wd;
+   WebDriver wd;
 
     @BeforeSuite
     public void setUp(){

@@ -8,15 +8,16 @@ import org.testng.annotations.Test;
 public class Registration extends TestBase {
 
     //WebDriver wd;
-    @BeforeMethod
+  @BeforeMethod
     public void preCondition() {
         if (isLogged()) {
-            logout();
+            //logout();
 
         }
     }
 
     public boolean isLogged() {
+      return true;
     }
 
     @Test
