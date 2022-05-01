@@ -8,30 +8,27 @@ import org.testng.annotations.Test;
 public class Registration extends TestBase {
 
     //WebDriver wd;
-  @BeforeMethod
+    @BeforeMethod
     public void preCondition() {
-        if (isLogged()) {
-            //logout();
+        if (app.getUser().isLogged()) {
+            app.getUser().logout();
 
         }
     }
 
-    public boolean isLogged() {
-      return true;
-    }
 
     @Test
     public void successRegisrationTest() {
 
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        String email = "noa" + i + "@gmail.com";
+        String email = "noa"+i+"@gmail.com";
         String password = "Nnoa12345$";
         System.out.println("Email: " + email);
 
-        openLoginRegistrationForm();
-        fillLoginRegistrationForm(email, password);
-        submitLoginRegistrationForm();
-        Assert.assertTrue(isElementPresent(By.xpath("//button[text()='Sign Out']")));
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillLoginRegistrationForm(email, password);
+        app.getUser().submitRegistrationForm();
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='Sign Out']")));
 
 
     }
@@ -40,13 +37,14 @@ public class Registration extends TestBase {
     @Test
     public void negativeRegistrationTest() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        String email = "noa" + i + "gmail.com";
+        String email = "noa"+i+"gmail.com";
         String password = "Nnoa12345$";
         System.out.println("Email: " + email);
 
-        openLoginRegistrationForm();//open LoginRegistration form
-        fillLoginRegistrationForm(email, password);//fill LoginRegistration form
-        submitLoginRegistrationForm();
+        app.getUser().openLoginRegistrationForm();//open LoginRegistration form
+        app.getUser().fillLoginRegistrationForm(email, password);//fill LoginRegistration form
+        app.getUser().submitRegistrationForm();
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='Sign Out']")));
         //click();
         //type();
 //        WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
