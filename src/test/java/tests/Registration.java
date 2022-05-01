@@ -44,7 +44,7 @@ public class Registration extends TestBase {
         app.getUser().openLoginRegistrationForm();//open LoginRegistration form
         app.getUser().fillLoginRegistrationForm(email, password);//fill LoginRegistration form
         app.getUser().submitRegistrationForm();
-        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='Sign Out']")));
+
         //click();
         //type();
 //        WebElement element = wd.findElement(By.cssSelector("[href='/login']"));

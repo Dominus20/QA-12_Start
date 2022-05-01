@@ -1,6 +1,7 @@
 package tests;
 
 
+import models.User;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,6 +16,13 @@ import org.testng.annotations.Test;
                 app.getUser().logout();
 
             }
+
+//            @BeforeMethod
+//            public void preCondition() {
+//                if (app.getUser().isLogged()) {
+//                    app.getUser().logout(new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$"));
+//
+//                }
         }
 
 
@@ -38,12 +46,20 @@ import org.testng.annotations.Test;
         @Test
         public void fillLoginFormTest() {
             int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+          //  User user = new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$");
+           User user =  User.builder()
+                    .email("noa@gmail.com")
+                            .password("Nnoa12345$")
+                                    .build();
+
+          /*  int i = (int) (System.currentTimeMillis() / 1000) % 3600;
             String email = "noa"+i+"@gmail.com";
             String password = "Nnoa12345$";
-            System.out.println("Email: " + email);
+            System.out.println("Email: " + email);*/
 
             app.getUser().openLoginRegistrationForm();
-            app.getUser().fillLoginRegistrationForm(email, password);
+           // app.getUser().fillLoginRegistrationForm(email, password);
+            app.getUser().fillLoginRegistrationForm(user);
             app.getUser().submitLogin();
         }
 
