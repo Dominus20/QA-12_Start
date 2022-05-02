@@ -12,7 +12,7 @@ public class HelperUser extends HelperBase {
 
     public void submitRegistrationForm() {
        // click(By.xpath("//button[text()='Sign Out']"));
-        click(By.xpath("//button[text()='Registration']"));
+        click(By.xpath("//button[text()=' Registration']"));
 
 
     }
