@@ -1,75 +1,75 @@
 package tests;
 
 
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
 public class LoginTest extends TestBase {
 
+    @BeforeMethod
+    public void preCondition(){
+        if(app.getUser().isLogged()){
+            app.getUser().logout();
+        }
+
+    }
+
+//    @BeforeMethod
+//    public void preCondition(){
+//        if(app.getUser().isLogged()){
+//            app.getUser().logout(new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$"));
+//        }
+//    }
    /* @Test
         public void successLoginTest(){
         WebElement element = wd.findElement(By.cssSelector("a[href='/login']"));
-
         List<WebElement> list = wd.findElements(By.tagName("a"));
         WebElement element2 = list.get(2);
         element.click();
-
         }*/
 
     @Test
     public void fillLoginFormTest() {
-
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+      //  User user = new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$");
+        User user = User.builder()
+                .email("noa@gmail.com")
+                        .password("Nnoa12345$")
+                                .build();
 
-        //   WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
-        WebElement element = wd.findElement(By.xpath("//*[text()='LOGIN']"));
-        element.click();
 
-        List<WebElement> list = wd.findElements(By.tagName("input"));
-        WebElement inputEmail = list.get(0);
-        WebElement inputPassword = list.get(0);
-        inputEmail.click();
-        inputEmail.clear();
-        inputEmail.sendKeys("noa@gmail.com");
+//        String email = "noa"+i+"@gmail.com";
+//        String password = "Nnoa12345$";
+//        System.out.println("Email" + email);
 
-        inputPassword.click();
-        inputPassword.clear();
-        inputPassword.sendKeys("Nnoa12345$");
-
-        WebElement buttonLogin = wd.findElement(By.tagName("button"));
-        buttonLogin.click();
-
-        // Assert.assertTrue(wd.findElement(By.xpath("//button[text()='Sign Out']")).size()>0);
+        app.getUser().openLoginRegistrationForm();
+      //  app.getUser().fillLoginRegistrationForm(email, password);
+        app.getUser().fillLoginRegistrationForm(user);
+        app.getUser().submitLogin();
 
     }
+
 
     @Test
     public void negativeLoginTest() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        WebElement element = wd.findElement(By.cssSelector("[href='/login']"));
-        element.click();
+        String email = "noa"+i+"gmail.com";
+        String password = "Nnoa12345$";
+        System.out.println("Email" + email);
 
-        List<WebElement> list = wd.findElements(By.tagName("input"));
-
-        WebElement inputEmail = list.get(0);
-        WebElement inputPassword = list.get(0);
-
-        inputEmail.click();
-        inputEmail.clear();
-        inputEmail.sendKeys("noagmail.com");
-
-        inputPassword.click();
-        inputPassword.clear();
-        inputPassword.sendKeys("Nnoa12345$");
-
-        WebElement buttonLogin = wd.findElement(By.tagName("button"));
-        buttonLogin.click();
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillLoginRegistrationForm(email, password);
+        app.getUser().submitLogin();
 
     }
+
+
 
 
 }
