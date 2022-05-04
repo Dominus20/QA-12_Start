@@ -41,10 +41,4 @@ public class HelperUser extends HelperBase {
         click(By.tagName("button"));
     }
 
-
-
-
-
-
-
 }

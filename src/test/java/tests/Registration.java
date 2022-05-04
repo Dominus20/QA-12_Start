@@ -19,13 +19,10 @@ public class Registration extends TestBase{
 
     }
 //    public void logout() {
-//        click(By.xpath("//button[text()='Sign Out']"));
-//    }
-//
+//        click(By.xpath("//button[text()='Sign Out']"));}
 //    public boolean isLogged() {
-//        return isElementPresent(By.xpath("//button[text()='Sign Out']"));
-//    }
-//
+//        return isElementPresent(By.xpath("//button[text()='Sign Out']")); }
+
 
     @Test
     public void successRegistrationTest() {
@@ -54,6 +51,7 @@ public class Registration extends TestBase{
         app.getUser().openLoginRegistrationForm();
         app.getUser().fillLoginRegistrationForm(email, password);
         app.getUser().submitRegistrationForm();
+
         //  click();
 //        WebElement element = wd.findElement(By.cssSelector("a[href='/login']"));
 //        element.click();
