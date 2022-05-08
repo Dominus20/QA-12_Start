@@ -18,23 +18,19 @@ public class Registration extends TestBase{
         }
 
     }
-//    public void logout() {
-//        click(By.xpath("//button[text()='Sign Out']"));}
-//    public boolean isLogged() {
-//        return isElementPresent(By.xpath("//button[text()='Sign Out']")); }
-
 
     @Test
     public void successRegistrationTest() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         String email = "noa" + i + "@gmail.com";
         String password = "Nnoa12345$";
-        System.out.println("Email" + email);
+        System.out.println("Email: " + email);
 
         app.getUser().openLoginRegistrationForm();
         app.getUser().fillLoginRegistrationForm(email, password);
         app.getUser().submitRegistrationForm();
-        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='Sign Out']")));
+        //Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='Sign Out']")));
+        Assert.assertTrue(app.getUser().isLogged());
 
     }
 
@@ -51,25 +47,9 @@ public class Registration extends TestBase{
         app.getUser().openLoginRegistrationForm();
         app.getUser().fillLoginRegistrationForm(email, password);
         app.getUser().submitRegistrationForm();
+        Assert.assertFalse(app.getUser().isLogged());
 
-        //  click();
-//        WebElement element = wd.findElement(By.cssSelector("a[href='/login']"));
-//        element.click();
-//
-//        List<WebElement> list = wd.findElements(By.tagName("input"));
-//
-//        WebElement inputEmail = list.get(0);
-//        WebElement inputPassword = list.get(1);
-//        inputEmail.click();
-//        inputEmail.clear();
-//        inputEmail.sendKeys("noa"+i+"gmail.com");
-//
-//        inputPassword.click();
-//        inputPassword.clear();
-//        inputPassword.sendKeys("Nnoa12345$");
-//
-//        WebElement buttonRegistration = wd.findElement(By.xpath("//*[text()=' Registration']"));
-//        buttonRegistration.click();
+
 
     }
 
