@@ -10,20 +10,20 @@ import org.testng.annotations.Test;
 public class AddNewContact extends TestBase{
 
 
-   /* @BeforeMethod
+    @BeforeMethod
     public void preCondition() {
         if(!app.getUser().isLogged()){
             app.getUser().login(User.builder()
                     .email("noa@gmail.com")
                     .password("Nnoa123455$")
-                    .build();
+                    .build());
         }
-    }*/
+
+    }
 
 
     @Test
     public void addNewContactSuccess(){
-
 
         int i = (int) (System.currentTimeMillis()/1000)%3600;
         System.out.println();
@@ -43,6 +43,9 @@ public class AddNewContact extends TestBase{
 
         app.contact().pause(2000);
        // Assert.assertTrue(isContactPageDisplayed());
+
+        Assert.assertTrue(app.contact().isContactCreateByName(contact.getName())); //if list contact with name + phone
+        Assert.assertTrue(app.contact().isContactCreateByPhone(contact.getPhone()));
 
 
 

@@ -47,7 +47,9 @@ public class Registration extends TestBase{
         app.getUser().openLoginRegistrationForm();
         app.getUser().fillLoginRegistrationForm(email, password);
         app.getUser().submitRegistrationForm();
-        Assert.assertFalse(app.getUser().isLogged());
+        app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isWrongFormatPresent());
+       // Assert.assertFalse(app.getUser().isLogged());
 
 
 

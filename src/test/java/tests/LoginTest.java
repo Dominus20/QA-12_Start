@@ -56,7 +56,10 @@ public class LoginTest extends TestBase {
         app.getUser().fillLoginRegistrationForm(email, password);
         app.getUser().submitLogin();
 
-        Assert.assertFalse(app.getUser().isLogged());
+
+        Assert.assertTrue(app.getUser().isWrongFormatPresent());
+
+      //  Assert.assertFalse(app.getUser().isLogged());
     }
 
 

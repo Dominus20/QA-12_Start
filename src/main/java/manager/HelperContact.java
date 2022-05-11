@@ -3,8 +3,11 @@ package manager;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-public class HelperContact extends HelperBase{
+import java.util.List;
+
+public class HelperContact extends HelperBase {
 
     public HelperContact(WebDriver wd) {
         super(wd);
@@ -31,11 +34,31 @@ public class HelperContact extends HelperBase{
         pause(3000);
     }
 
-    public void login() {
-        click(By.xpath("//button[text()='Sign Out']"));
+//  //  public void login() {
+//        click(By.xpath("//button[text()='Sign Out']"));
+//    }
+
+    public boolean isContactCreateByName(String name) {
+        List<WebElement> list = wd.findElements(By.cssSelector("h2"));
+        for (WebElement el : list) {
+            if (el.getText().equals(name))
+                return true;
+        }
+        return false;
     }
 
-//    public  void isContactPageDisplayed() {
-//    }
+
+
+    public boolean isContactCreateByPhone(String phone) {
+        List<WebElement> list = wd.findElements(By.cssSelector("h3"));
+        for (WebElement el : list) {
+            if (el.getText().equals(phone))
+                return true;
+        }
+        return false;
+    }
+
 }
+
+
 
