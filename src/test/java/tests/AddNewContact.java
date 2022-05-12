@@ -15,7 +15,7 @@ public class AddNewContact extends TestBase{
         if(!app.getUser().isLogged()){
             app.getUser().login(User.builder()
                     .email("noa@gmail.com")
-                    .password("Nnoa123455$")
+                    .password("Nnoa12345$")
                     .build());
         }
 
@@ -41,7 +41,7 @@ public class AddNewContact extends TestBase{
         app.contact().fillContactForm(contact);
         app.contact().saveContact();
 
-        app.contact().pause(2000);
+        app.contact().pause(3000);
        // Assert.assertTrue(isContactPageDisplayed());
 
         Assert.assertTrue(app.contact().isContactCreateByName(contact.getName())); //if list contact with name + phone
