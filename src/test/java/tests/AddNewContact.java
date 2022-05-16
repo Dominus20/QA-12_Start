@@ -25,6 +25,8 @@ public class AddNewContact extends TestBase{
     @Test
     public void addNewContactSuccess(){
 
+        int countStart = app.contact().countOfContacts();
+
         int i = (int) (System.currentTimeMillis()/1000)%3600;
         System.out.println();
 
@@ -41,9 +43,12 @@ public class AddNewContact extends TestBase{
         app.contact().fillContactForm(contact);
         app.contact().saveContact();
 
+        int countEnd = app.contact().countOfContacts();
+
         app.contact().pause(3000);
        // Assert.assertTrue(isContactPageDisplayed());
 
+        Assert.assertEquals(countEnd-countStart,1);
         Assert.assertTrue(app.contact().isContactCreateByName(contact.getName())); //if list contact with name + phone
         Assert.assertTrue(app.contact().isContactCreateByPhone(contact.getPhone()));
 
