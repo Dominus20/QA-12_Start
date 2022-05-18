@@ -22,10 +22,11 @@ public class AddNewContact extends TestBase{
     }
 
 
-    @Test
+    @Test(invocationCount = 3)
     public void addNewContactSuccess(){
 
         int countStart = app.contact().countOfContacts();
+        logger.info("The test 'Add new contact starts with count of contact---->"+countStart );
 
         int i = (int) (System.currentTimeMillis()/1000)%3600;
         System.out.println();
@@ -44,6 +45,7 @@ public class AddNewContact extends TestBase{
         app.contact().saveContact();
 
         int countEnd = app.contact().countOfContacts();
+        logger.info("The test 'Add new contact' ends with count of contact in the end --->"+countEnd);
 
         app.contact().pause(3000);
        // Assert.assertTrue(isContactPageDisplayed());
