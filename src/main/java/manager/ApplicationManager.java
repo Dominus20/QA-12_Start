@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    WebDriver wd;
+    //WebDriver wd;
+    EventFiringWebDriver wd;
     HelperUser user;
     HelperContact contact;
     String browser;
@@ -43,7 +44,7 @@ public class ApplicationManager {
         user = new HelperUser(wd);
         contact = new HelperContact(wd);
 
-
+        wd.register(new MyListener());
 
     }
 

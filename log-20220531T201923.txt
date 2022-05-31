@@ -1,0 +1,15 @@
+1973 [Test worker] INFO  manager.ApplicationManager - All tests starts in 'Chrome' browser
+2756 [Test worker] INFO  tests.TestBase - Test name ----->successRegistrationTest
+2758 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //button[text()='Sign Out']
+7783 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //button[text()='Sign Out'] was found
+7785 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.cssSelector: a[href='/login']
+7800 [Test worker] INFO  manager.MyListener - The element with locator ---->By.cssSelector: a[href='/login'] was found
+7880 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //input[2]
+7908 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //input[2] was found
+8041 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //input[2]
+8061 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //input[2] was found
+8175 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //button[text()=' Registration']
+8200 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //button[text()=' Registration'] was found
+8239 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //button[text()='Sign Out']
+8872 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //button[text()='Sign Out'] was found
+8876 [Test worker] INFO  tests.TestBase - Test endsuccessRegistrationTest
