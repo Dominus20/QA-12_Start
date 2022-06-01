@@ -1,5 +1,6 @@
 package tests;
 
+import manager.MyDataProvider;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -27,10 +28,11 @@ public class LoginTest extends TestBase {
         element.click();
         }*/
 
+    //@Test(dataProvider = "fillLoginFormTest", dataProviderClass = MyDataProvider.class)
     @Test
     public void fillLoginFormTest() {
-        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        //  User user = new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$");
+      //  int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+//          User user = new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$");
         User user = User.builder()
                 .email("noa@gmail.com")
                 .password("Nnoa12345$")
@@ -61,6 +63,58 @@ public class LoginTest extends TestBase {
 
       //  Assert.assertFalse(app.getUser().isLogged());
     }
+    @Test(dataProvider = "loginValidData", dataProviderClass = MyDataProvider.class)
+    public void loginSuccessDataProvider(User user){
+
+//
+//        User user = User.builder()
+//                .email("noa@gmail.com")
+//                .password("Nnoa12345$")
+//                .build();
+
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillLoginRegistrationForm(user);
+        app.getUser().submitLogin();
+        app.getUser().pause(1000);
+        Assert.assertTrue(app.getUser().isLogged());
+
+
+    }
+    @Test
+    public void loginSuccessTestModel() {
+
+
+        User user = User.builder()
+                .email("noa@gmail.com")
+                .password("Nnoa12345$")
+                .build();
+
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillLoginRegistrationForm(user);
+        app.getUser().submitLogin();
+        app.getUser().pause(1000);
+        Assert.assertTrue(app.getUser().isLogged());
+    }
+
+   @Test//(dataProvider = "loginValidData", dataProviderClass = MyDataProvider.class)
+    public void loginSuccessTestModelDataProvider() {
+
+
+        User user = User.builder()
+                .email("noa@gmail.com")
+                .password("Nnoa12345$")
+                .build();
+
+       app.getUser().openLoginRegistrationForm();
+       app.getUser().fillLoginRegistrationForm(user);
+       app.getUser().submitLogin();
+       app.getUser().pause(1000);
+       Assert.assertTrue(app.getUser().isLogged());
+   }
+
+
+
+
 
 
 }

@@ -1,0 +1,1 @@
+1984 [Test worker] INFO  manager.ApplicationManager - All tests starts in 'Chrome' browser
