@@ -96,7 +96,9 @@ public class LoginTest extends TestBase {
         Assert.assertTrue(app.getUser().isLogged());
     }
 
-   @Test//(dataProvider = "loginValidData", dataProviderClass = MyDataProvider.class)
+   @Test(groups = {"web"})
+
+   //(dataProvider = "loginValidData", dataProviderClass = MyDataProvider.class)
     public void loginSuccessTestModelDataProvider() {
 
 

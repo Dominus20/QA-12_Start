@@ -14,6 +14,9 @@ public class RemoveContactTests extends TestBase{
                     .password("Nnoa12345$")
                     .build());
         }
+        //providerContacts()===>3
+         app.contact().providerOfContacts();
+
 
     }
 

@@ -20,7 +20,8 @@ public class Registration extends TestBase{
 
     }
 
-    @Test
+    @Test(groups = {"web"})
+
     public void successRegistrationTest() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         String email = "noa" + i + "@gmail.com";
@@ -56,17 +57,17 @@ public class Registration extends TestBase{
 
 
     }
-
-    @Test(dataProvider = "RegValidData", dataProviderClass = MyDataProvider.class)
-    public void successRegistrationTestNew(String email, String password) {
-
-        app.getUser().openLoginRegistrationForm();
-        app.getUser().fillLoginRegistrationForm(email, password);
-        app.getUser().submitRegistrationForm();
-
-        app.getUser().pause(3000);
-        Assert.assertTrue(app.getUser().isLogged());
-
-    }
+//
+//    @Test(dataProvider = "RegValidData", dataProviderClass = MyDataProvider.class)
+//    public void successRegistrationTestNew(String email, String password) {
+//
+//        app.getUser().openLoginRegistrationForm();
+//        app.getUser().fillLoginRegistrationForm(email, password);
+//        app.getUser().submitRegistrationForm();
+//
+//        app.getUser().pause(3000);
+//        Assert.assertTrue(app.getUser().isLogged());
+//
+//    }
 
 }

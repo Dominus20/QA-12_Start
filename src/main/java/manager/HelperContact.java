@@ -93,6 +93,27 @@ public class HelperContact extends HelperBase {
         return wd.findElements(By.cssSelector(".contact-item_card__2SOIM h3")).isEmpty();
     }
 
+    public void providerOfContacts(){
+        if(countOfContacts()<3){
+            int index=(int) (System.currentTimeMillis()/1000)%3600;
+            for(int i=0; i<3;i++){
+
+                Contact contact = Contact.builder().Name("Zoa")
+                        .LastName("Snow")
+                        .Phone("1212" +i+ index)
+                        .email("zoa"+i+index+"@gmail.com")
+                        .Address("Haifa")
+                        .description("Friend").build();
+                openContactForm();
+                fillContactForm(contact);
+                saveContact();
+                pause(1000);
+            }
+            //Contact contact = Contact.builder().Name().LastName().build();
+        }
+    }
+
+
 
 }
 

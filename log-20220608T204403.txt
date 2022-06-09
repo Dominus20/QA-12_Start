@@ -1,0 +1,19 @@
+1997 [Test worker] INFO  manager.ApplicationManager - All tests starts in 'Chrome' browser
+2758 [Test worker] INFO  tests.TestBase - Test name ----->removeOneContact
+2759 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //button[text()='Sign Out']
+7818 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //button[text()='Sign Out'] was found
+7819 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.cssSelector: a[href='/login']
+7835 [Test worker] INFO  manager.MyListener - The element with locator ---->By.cssSelector: a[href='/login'] was found
+7917 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //input[1]
+7945 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //input[1] was found
+8065 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //input[2]
+8087 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //input[2] was found
+8215 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.tagName: button
+8237 [Test worker] INFO  manager.MyListener - The element with locator ---->By.tagName: button was found
+8273 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.cssSelector: .contact-item_card__2SOIM
+9166 [Test worker] INFO  manager.MyListener - The element with locator ---->By.cssSelector: .contact-item_card__2SOIM was found
+9167 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.cssSelector: .contact-item_card__2SOIM
+9185 [Test worker] INFO  manager.MyListener - The element with locator ---->By.cssSelector: .contact-item_card__2SOIM was found
+9228 [Test worker] INFO  manager.MyListener - Start search element by locator ------>By.xpath: //button[.='Remove']
+9250 [Test worker] INFO  manager.MyListener - The element with locator ---->By.xpath: //button[.='Remove'] was found
+9288 [Test worker] INFO  tests.TestBase - Test endremoveOneContact
